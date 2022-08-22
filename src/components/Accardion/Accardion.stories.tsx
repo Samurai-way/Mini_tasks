@@ -11,24 +11,30 @@ export default {
 let CallBack = action('want to change')
 
 const Template:  Story<AccardionPropsType> = (args) => <Accardion {...args}/>
-export const Accardion2 = Template.bind({})
-Accardion2.args = {
-    color: 'red',
+
+const callBackProps = {
     onClick: CallBack,
+}
+
+export const AccardionFalse = Template.bind({})
+
+AccardionFalse.args = {
+    color: 'red',
+    ...callBackProps,
+    collapsed: false,
+    titleValue: 'Title List',
+}
+
+export const AccardionTrue = Template.bind({})
+AccardionTrue.args = {
+    color: 'red',
+    ...callBackProps,
     collapsed: true,
     titleValue: 'Title List',
 }
 
-export const AccardionFalse = () => <Accardion collapsed={false}
-                                               titleValue={'Title list'}
-                                               onClick={CallBack}
-                                               color={'red'}
-/>
-export const AccardionTrue = () => <Accardion collapsed={true}
-                                               titleValue={'Title list'}
-                                               onClick={CallBack}
-                                               color={'red'}
-/>
+
+
 
 export const AccardionDefault = () => {
 
