@@ -16,9 +16,17 @@ export const AccardionTrue = () => <Accardion collapsed={true}
                                                onClick={()=>{}}
                                                color={'red'}
 />
+
 export const AccardionDefault = () => {
+
     let [call, setCall]=useState<boolean>(true)
-    return <Accardion collapsed={call} titleValue={'Title list'} onClick={() => setCall(!call)} color={'red'}/>
+
+    return <Accardion
+        collapsed={call}
+        titleValue={'Title list'}
+        onClick={() => setCall(!call)}
+        color={'red'}
+    />
 }
 
 
