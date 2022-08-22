@@ -19,16 +19,16 @@ const callBackProps = {
 export const AccardionFalse = Template.bind({})
 
 AccardionFalse.args = {
-    color: 'red',
     ...callBackProps,
+    color: 'red',
     collapsed: false,
     titleValue: 'Title List',
 }
 
 export const AccardionTrue = Template.bind({})
 AccardionTrue.args = {
-    color: 'red',
     ...callBackProps,
+    color: 'red',
     collapsed: true,
     titleValue: 'Title List',
 }
