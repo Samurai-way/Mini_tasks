@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {AppProps, Father} from "./components/Star/Star";
+import {OnnOff} from "./components/Onn/Off";
+import {Accardion} from './components/Accardion/Accardion';
+import { Clicker } from './components/Clicker/Clicker';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    //
+    let [call, setCall] = useState<boolean>(true)
+    let [onn, setOnn] = useState<boolean>(true)
+    let [value, setValue] = useState<AppProps>(0)
+
+
+    return (
+        <div className="App">
+            <OnnOff on={onn} setOnn={setOnn}/>
+
+
+            <Accardion collapsed={call} titleValue={'Hello'}
+                       onClick={ () => {setCall(!call) } }
+            />
+
+
+            <Clicker/>
+
+
+            <Father value={value} setValue={setValue}/>
+        </div>
+    );
 }
 
 export default App;
