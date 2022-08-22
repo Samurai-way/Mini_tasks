@@ -13,7 +13,10 @@ let CallBack = action('want to change')
 const Template:  Story<AccardionPropsType> = (args) => <Accardion {...args}/>
 export const Accardion2 = Template.bind({})
 Accardion2.args = {
-
+    color: 'red',
+    onClick: CallBack,
+    collapsed: true,
+    titleValue: 'Title List',
 }
 
 export const AccardionFalse = () => <Accardion collapsed={false}
