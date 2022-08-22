@@ -10,7 +10,7 @@ export default {
 
 let CallBack = action('want to change')
 
-const Template:  Story<AccardionPropsType> = (args) => <Accardion {...args}/>
+const Template: Story<AccardionPropsType> = (args) => <Accardion {...args}/>
 
 const callBackProps = {
     onClick: CallBack,
@@ -34,18 +34,18 @@ AccardionTrue.args = {
 }
 
 
+export const ModeChanging: Story<AccardionPropsType> = (args) => {
 
-
-export const AccardionDefault = () => {
-
-    let [call, setCall]=useState<boolean>(true)
+    let [call, setCall] = useState<boolean>(true)
 
     return <Accardion
-        collapsed={call}
-        titleValue={'Title list'}
-        onClick={() => setCall(!call)}
-        color={'red'}
+        {...args} collapsed={call} onClick={() => setCall(!call)}
     />
+}
+
+ModeChanging.args = {
+    titleValue: 'Title list',
+    color: 'red',
 }
 
 
