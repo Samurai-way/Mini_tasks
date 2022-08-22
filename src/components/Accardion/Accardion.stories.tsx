@@ -4,7 +4,7 @@ import {action} from "@storybook/addon-actions";
 import {Story} from "@storybook/react";
 
 export default {
-    title: 'Accardion',
+    title: 'AccardionStories/Accardion',
     component: Accardion,
 }
 
