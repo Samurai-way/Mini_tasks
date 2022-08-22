@@ -16,7 +16,7 @@ export const AccardionFalse = () => <Accardion collapsed={false}
 />
 export const AccardionTrue = () => <Accardion collapsed={true}
                                                titleValue={'Title list'}
-                                               onClick={()=>{}}
+                                               onClick={CallBack}
                                                color={'red'}
 />
 
