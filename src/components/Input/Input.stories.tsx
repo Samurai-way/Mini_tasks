@@ -7,11 +7,13 @@ export default {
 export const UncontrolledInput = () => <input/>
 
 export const TrackValueUncontrolledInput = () => {
-    const [value, setValue] = useState("");
+
+    const [value, setValue]=useState('')
+
     return <>
-        <input onChange={(event) => {
-            const actialValue = event.currentTarget.value;
-            setValue(actialValue);
+        <input onChange={(event)=>{
+            const eventValue = event.currentTarget.value;
+            setValue(eventValue)
         }}/> - {value}
-    </>;
+    </>
 }
