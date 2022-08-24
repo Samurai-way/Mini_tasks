@@ -32,3 +32,9 @@ export const GetValue = () => {
         <button onClick={onClickButton}> save </button> -- newValue: {value}
     </>
 }
+
+export const ControlledInputValue = () => {
+    return <>
+        <input value={'hello'}/>
+    </>
+}
