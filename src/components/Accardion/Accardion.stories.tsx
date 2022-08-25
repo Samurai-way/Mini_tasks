@@ -10,7 +10,8 @@ export default {
 
 let CallBack = action('want to change')
 
-const Template: Story<AccardionPropsType> = (args) => <Accardion {...args}/>
+const Template: Story<AccardionPropsType> = (args) => <Accardion
+    {...args} />
 
 const callBackProps = {
     onClick: CallBack,
