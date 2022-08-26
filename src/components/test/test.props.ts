@@ -11,8 +11,15 @@
 //     address: {title: string}
 // }
 
-export type copyType = {
+// export type copyType = {
+//     name: string,
+//     age: number,
+//     heir: number
+// }
+
+export type heirType = {
     name: string,
     age: number,
-    heir: number
+    heir: number,
+    address: {title: string}
 }
