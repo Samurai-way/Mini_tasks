@@ -1,5 +1,12 @@
-export type UserType = {
+// export type UserType = {
+//     name: string,
+//     age: number,
+//     address: { title: string }
+// }
+
+export type HeirType = {
     name: string,
     age: number,
-    address: { title: string }
+    heir: number
+    address: {title: string}
 }
