@@ -143,3 +143,9 @@ export function changeUser(u: UserType, newLesons: Array<string>) {
         ...u, lessons: newLesons
     }
 }
+
+export function changeUserTechno(u: UserType, newNech: Array<number>) {
+    return {
+        ...u, technologies: newNech
+    }
+}
