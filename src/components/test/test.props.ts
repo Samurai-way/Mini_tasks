@@ -63,9 +63,15 @@ export type UserType = {
     technologies: { title: string }
 }
 
-export function changeUser(user: UserType, title: string){
-    return{
-        ...user,
-        address: {...user.address, title: title}
+// export function changeUser(user: UserType, title: string){
+//     return{
+//         ...user,
+//         address: {...user.address, title: title}
+//     }
+// }
+
+export function changeTechno(user: UserType, title: string){
+    return {
+        ...user, technologies: {...user.technologies, title: title}
     }
 }
