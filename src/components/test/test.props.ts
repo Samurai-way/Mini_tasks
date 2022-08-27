@@ -40,9 +40,16 @@ export function inc(person: heirType, power: number) {
 }
 
 export function leptop(person: UserWithLeptopType, city: string) {
-    let copy = {...person}
-
-    copy.address = {...person.address, city: 'USA', house: 10}
+    let copy = {...person,
+        address: {
+            city
+        }}
 
     return copy
+}
+
+export function leptopUserMacbook(person: UserWithLeptopType, title: string) {
+    return {
+        ...person, laptop: {...person.laptop, title: title}
+    }
 }
