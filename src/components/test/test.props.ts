@@ -176,3 +176,9 @@ export function removeBooks(user:UserType, oldBook: string){
         books: user.books.filter(b => b !==oldBook)
     }
 }
+export function upgradeBooks(user:UserType, newBook: string){
+    return{
+        ...user,
+        books: [newBook,...user.books]
+    }
+}
