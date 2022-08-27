@@ -75,35 +75,59 @@
 //     }
 // }
 
-export type LessonsType = {
-    title: string
+// export type LessonsType = {
+//     title: string
+// }
+//
+// export type AddressType = {
+//     title: string
+// }
+//
+// export type PersonType = {
+//     name: string,
+//     age: number,
+//     lessons: LessonsType,
+//     address: AddressType
+// }
+//
+// export function changePerson(u: PersonType, title: string){
+//
+//     return{
+//         ...u,
+//         address:
+//             {...u.address,
+//                 title: title}
+//     }
+// }
+//
+// export function changePersonLesson(u: PersonType, title: string){
+//
+//     return{
+//         ...u,
+//        lessons: {...u.lessons, title: title}
+//     }
+// }
+
+export type technologiesType = {
+    title: string,
+    name: string
 }
 
-export type AddressType = {
-    title: string
-}
-
-export type PersonType = {
+export type UserType = {
     name: string,
-    age: number,
-    lessons: LessonsType,
-    address: AddressType
+    lessons: Array<string>
+    technologies: technologiesType
 }
 
-export function changePerson(u: PersonType, title: string){
-
+export function changeName(u:UserType, name:string){
     return{
-        ...u,
-        address:
-            {...u.address,
-                title: title}
+        ...u, name: name
     }
 }
 
-export function changePersonLesson(u: PersonType, title: string){
-
+export function changeTech(u:UserType, name:string, title: string){
     return{
         ...u,
-       lessons: {...u.lessons, title: title}
+        technologies: {...u, name: name, title: title}
     }
 }
