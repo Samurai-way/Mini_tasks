@@ -55,13 +55,12 @@
 // }
 
 
-
-export type UserType = {
-    name: string,
-    age: number,
-    address: { title: string },
-    technologies: { title: string }
-}
+// export type UserType = {
+//     name: string,
+//     age: number,
+//     address: { title: string },
+//     technologies: { title: string }
+// }
 
 // export function changeUser(user: UserType, title: string){
 //     return{
@@ -70,8 +69,33 @@ export type UserType = {
 //     }
 // }
 
-export function changeTechno(user: UserType, title: string){
-    return {
-        ...user, technologies: {...user.technologies, title: title}
+// export function changeTechno(user: UserType, title: string){
+//     return {
+//         ...user, technologies: {...user.technologies, title: title}
+//     }
+// }
+
+export type LessonsType = {
+    title: string
+}
+
+export type AddressType = {
+    title: string
+}
+
+export type PersonType = {
+    name: string,
+    age: number,
+    lessons: LessonsType,
+    address: AddressType
+}
+
+export function changePerson(u: PersonType, title: string){
+
+    return{
+        ...u,
+        address:
+            {...u.address,
+                title: title}
     }
 }
