@@ -107,27 +107,39 @@
 //        lessons: {...u.lessons, title: title}
 //     }
 // }
-
-export type technologiesType = {
-    title: string,
-    name: string
-}
+//
+// export type technologiesType = {
+//     title: string,
+//     name: string
+// }
+//
+// export type UserType = {
+//     name: string,
+//     lessons: Array<string>
+//     technologies: technologiesType
+// }
+//
+// export function changeName(u:UserType, name:string){
+//     return{
+//         ...u, name: name
+//     }
+// }
+//
+// export function changeTech(u:UserType, name:string, title: string){
+//     return{
+//         ...u,
+//         technologies: {...u, name: name, title: title}
+//     }
+// }
 
 export type UserType = {
     name: string,
-    lessons: Array<string>
-    technologies: technologiesType
+    lessons: Array<string>,
+    technologies: Array<number>
 }
 
-export function changeName(u:UserType, name:string){
+export function changeUser(u: UserType, newLesons: Array<string>) {
     return{
-        ...u, name: name
-    }
-}
-
-export function changeTech(u:UserType, name:string, title: string){
-    return{
-        ...u,
-        technologies: {...u, name: name, title: title}
+        ...u, lessons: newLesons
     }
 }
