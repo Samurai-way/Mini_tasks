@@ -162,3 +162,10 @@ export function changeLessons(user:UserType, oldSkill: string, newSkill:string){
         lessons: user.lessons.map(l => l === oldSkill ? newSkill : l)
     }
 }
+
+export function changeBooks(user:UserType, oldBook: string, newBook: string){
+    return{
+        ...user,
+        books: user.books.map(b => b === oldBook ? newBook : b)
+    }
+}
