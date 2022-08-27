@@ -218,3 +218,10 @@ export function changeElement2(user: UserType, oldID: number, newTitle: string){
         address: user.address.map(el=> el.id === oldID ? newTitle : el)
     }
 }
+
+export function changeFlower(user: UserType, oldTitle: string, newTitle: string){
+    return{
+        ...user,
+        flowers: user.flowers.map(f => f === oldTitle ? newTitle : f)
+    }
+}
