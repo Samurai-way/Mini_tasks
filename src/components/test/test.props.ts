@@ -149,36 +149,72 @@
 //         ...u, technologies: newNech
 //     }
 // }
+//
+// export type UserType = {
+//     name: string,
+//     lessons: Array<string>
+//     books: Array<string>
+// }
+//
+// export function changeLessons(user:UserType, oldSkill: string, newSkill:string){
+//     return{
+//         ...user,
+//         lessons: user.lessons.map(l => l === oldSkill ? newSkill : l)
+//     }
+// }
+//
+// export function changeBooks(user:UserType, oldBook: string, newBook: string){
+//     return{
+//         ...user,
+//         books: user.books.map(b => b === oldBook ? newBook : b)
+//     }
+// }
+//
+// export function removeBooks(user:UserType, oldBook: string){
+//     return{
+//         ...user,
+//         books: user.books.filter(b => b !==oldBook)
+//     }
+// }
+// export function upgradeBooks(user:UserType, newBook: string){
+//     return{
+//         ...user,
+//         books: [newBook,...user.books]
+//     }
+// }
+//
+// export function updateBooks(user:UserType, oldBook: string, newBook: string){
+//     return{
+//         ...user,
+//         books: user.books.map(b => b === oldBook ? newBook : b)
+//     }
+// }
+
+import {number} from "prop-types";
 
 export type UserType = {
-    name: string,
+    name: string
+    address: Array<{id: number, title: string}>
     lessons: Array<string>
-    books: Array<string>
+    flowers: Array<string>
 }
 
-export function changeLessons(user:UserType, oldSkill: string, newSkill:string){
+export function changeElement(user: UserType, oldID: number, newTitle: string){
     return{
         ...user,
-        lessons: user.lessons.map(l => l === oldSkill ? newSkill : l)
+        address: user.address.map(m => m.id === oldID ? newTitle : m)
     }
 }
 
-export function changeBooks(user:UserType, oldBook: string, newBook: string){
+// export function changeElement2(user: UserType, oldID: number, newTitle: string){
+//     return{
+//         ...user,
+//         address: user.address.map(m => m.id === oldID ? newTitle : m)
+//     }
+// }
+export function changeElement2(user: UserType, oldID: number, newTitle: string){
     return{
         ...user,
-        books: user.books.map(b => b === oldBook ? newBook : b)
-    }
-}
-
-export function removeBooks(user:UserType, oldBook: string){
-    return{
-        ...user,
-        books: user.books.filter(b => b !==oldBook)
-    }
-}
-export function upgradeBooks(user:UserType, newBook: string){
-    return{
-        ...user,
-        books: [newBook,...user.books]
+        address: user.address.map(el=> el.id === oldID ? newTitle : el)
     }
 }
