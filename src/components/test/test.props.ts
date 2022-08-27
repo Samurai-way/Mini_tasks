@@ -132,20 +132,33 @@
 //     }
 // }
 
+// export type UserType = {
+//     name: string,
+//     lessons: Array<string>,
+//     technologies: Array<number>
+// }
+//
+// export function changeUser(u: UserType, newLesons: Array<string>) {
+//     return{
+//         ...u, lessons: newLesons
+//     }
+// }
+//
+// export function changeUserTechno(u: UserType, newNech: Array<number>) {
+//     return {
+//         ...u, technologies: newNech
+//     }
+// }
+
 export type UserType = {
     name: string,
-    lessons: Array<string>,
-    technologies: Array<number>
+    lessons: Array<string>
+    books: Array<string>
 }
 
-export function changeUser(u: UserType, newLesons: Array<string>) {
+export function changeLessons(user:UserType, oldSkill: string, newSkill:string){
     return{
-        ...u, lessons: newLesons
-    }
-}
-
-export function changeUserTechno(u: UserType, newNech: Array<number>) {
-    return {
-        ...u, technologies: newNech
+        ...user,
+        lessons: user.lessons.map(l => l === oldSkill ? newSkill : l)
     }
 }
