@@ -225,3 +225,10 @@ export function changeFlower(user: UserType, oldTitle: string, newTitle: string)
         flowers: user.flowers.map(f => f === oldTitle ? newTitle : f)
     }
 }
+
+export function removeFlower(user:UserType, oldTitle: string){
+    return{
+        ...user,
+        flowers: user.flowers.filter(el=> el !== oldTitle)
+    }
+}
