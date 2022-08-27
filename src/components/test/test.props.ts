@@ -99,3 +99,11 @@ export function changePerson(u: PersonType, title: string){
                 title: title}
     }
 }
+
+export function changePersonLesson(u: PersonType, title: string){
+
+    return{
+        ...u,
+       lessons: {...u.lessons, title: title}
+    }
+}
