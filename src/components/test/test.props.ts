@@ -169,3 +169,10 @@ export function changeBooks(user:UserType, oldBook: string, newBook: string){
         books: user.books.map(b => b === oldBook ? newBook : b)
     }
 }
+
+export function removeBooks(user:UserType, oldBook: string){
+    return{
+        ...user,
+        books: user.books.filter(b => b !==oldBook)
+    }
+}
