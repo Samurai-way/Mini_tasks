@@ -191,44 +191,64 @@
 // }
 
 import {number} from "prop-types";
-
-export type UserType = {
-    name: string
-    address: Array<{id: number, title: string}>
-    lessons: Array<string>
-    flowers: Array<string>
-}
-
-export function changeElement(user: UserType, oldID: number, newTitle: string){
-    return{
-        ...user,
-        address: user.address.map(m => m.id === oldID ? newTitle : m)
-    }
-}
-
-// export function changeElement2(user: UserType, oldID: number, newTitle: string){
+//
+// export type UserType = {
+//     name: string
+//     address: Array<{id: number, title: string}>
+//     lessons: Array<string>
+//     flowers: Array<string>
+// }
+//
+// export function changeElement(user: UserType, oldID: number, newTitle: string){
 //     return{
 //         ...user,
 //         address: user.address.map(m => m.id === oldID ? newTitle : m)
 //     }
 // }
-export function changeElement2(user: UserType, oldID: number, newTitle: string){
-    return{
-        ...user,
-        address: user.address.map(el=> el.id === oldID ? newTitle : el)
-    }
+//
+// // export function changeElement2(user: UserType, oldID: number, newTitle: string){
+// //     return{
+// //         ...user,
+// //         address: user.address.map(m => m.id === oldID ? newTitle : m)
+// //     }
+// // }
+// export function changeElement2(user: UserType, oldID: number, newTitle: string){
+//     return{
+//         ...user,
+//         address: user.address.map(el=> el.id === oldID ? newTitle : el)
+//     }
+// }
+//
+// export function changeFlower(user: UserType, oldTitle: string, newTitle: string){
+//     return{
+//         ...user,
+//         flowers: user.flowers.map(f => f === oldTitle ? newTitle : f)
+//     }
+// }
+//
+// export function removeFlower(user:UserType, oldTitle: string){
+//     return{
+//         ...user,
+//         flowers: user.flowers.filter(el=> el !== oldTitle)
+//     }
+// }
+
+
+type CompanyType = { id: number, title: string }
+export type WithCompanyType = {
+    companies: Array<CompanyType>
 }
 
-export function changeFlower(user: UserType, oldTitle: string, newTitle: string){
-    return{
-        ...user,
-        flowers: user.flowers.map(f => f === oldTitle ? newTitle : f)
-    }
-}
+export function updateCompanyTitle(companies: { [key: string]: Array<CompanyType> },
+                                   userName: string,
+                                   userID: number,
+                                   newTitle: string
+) {
 
-export function removeFlower(user:UserType, oldTitle: string){
-    return{
-        ...user,
-        flowers: user.flowers.filter(el=> el !== oldTitle)
-    }
+    let copy = {...companies}
+    // @ts-ignore
+    copy[userName] = copy[userName].map(el => el.id === userID ? newTitle : el)
+
+
+    return copy
 }
