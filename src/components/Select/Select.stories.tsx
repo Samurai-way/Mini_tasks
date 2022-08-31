@@ -1,14 +1,23 @@
 import React from 'react';
-import {Father} from "../Star/Star";
 import {action} from "@storybook/addon-actions";
+import {Select} from "./Select";
 
 
 export default {
-    title: 'SelectStories/Select',
-    component: Father,
+    title: 'Select/Select',
+    component: Select,
 }
 
 
 let CallBack = action('want to change')
 
-export const EmptyRating = () => <Father value={0} setValue={CallBack}/>
+export const EmptyRating = () => <Select
+    items={[
+        {title: 'USA', value: ''},
+        {title: 'Canada', value: ''},
+        {title: 'Kiev', value: ''},
+    ]}
+    value={''}
+    onChange={CallBack}
+
+/>
