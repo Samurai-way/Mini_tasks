@@ -1,4 +1,6 @@
 import React from 'react';
+import style from './Style.module.css';
+
 
 type ItemsType = {
     title: string
@@ -17,15 +19,17 @@ export const Select = (props: SelectPropsType) => {
     const selectedItem = props.items.find(i => i.value === props.value)
 
     return (
-        <div>
+        <div className={style.select}>
             <select>
                 <option value={''}>USA</option>
                 <option value={''}>Canada</option>
                 <option value={''}>Kiev</option>
             </select>
             <h3>{selectedItem && selectedItem.title}</h3>
-                {props.items.map(i => <div>{i.value}</div>)}
+            <div className={style.items}>
+                {props.items.map(i => <div>{i.title}</div>)}
+            </div>
         </div>
-);
+    );
 };
 
