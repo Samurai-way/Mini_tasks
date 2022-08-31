@@ -17,9 +17,14 @@ export type SelectPropsType = {
 export const Select = (props: SelectPropsType) => {
 
     const selectedItem = props.items.find(i => i.value === props.value)
-    const [active, setActive]=useState(true)
+    const [active, setActive] = useState(true)
     const clickHendler = () => {
         setActive(!active)
+    }
+
+    const onItemsClick = (value: any) => {
+        props.onChange(value)
+        clickHendler()
     }
 
     return (
@@ -27,9 +32,11 @@ export const Select = (props: SelectPropsType) => {
             <div className={style.select + ' '}>
                 <span className={style.main} onClick={clickHendler}>{selectedItem && selectedItem.title}</span>
                 {active &&
-                <div className={style.items}>
-                    {props.items.map(i => <div key={i.value} onClick={()=>{props.onChange(i.value)}}>{i.title}</div>)}
-                </div>
+                    <div className={style.items}>
+                        {props.items.map(i => <div key={i.value}
+                                                   onClick={()=>{onItemsClick(i.value)}}>{i.title}
+                        </div>)}
+                    </div>
                 }
             </div>
         </div>

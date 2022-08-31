@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {action} from "@storybook/addon-actions";
 import {Select} from "./Select";
 
@@ -11,13 +11,17 @@ export default {
 
 let CallBack = action('number')
 
-export const EmptyRating = () => <Select
-    items={[
-        {title: 'USA', value: ''},
-        {title: 'Canada', value: ''},
-        {title: 'Kiev', value: ''},
-    ]}
-    value={''}
-    onChange={CallBack}
+export const EmptyRating = () => {
+    const [value, setValue] = useState('2')
 
-/>
+    return <Select
+        items={[
+            {title: 'USA', value: '1'},
+            {title: 'Canada', value: '2'},
+            {title: 'Kiev', value: '3'},
+        ]}
+        value={value}
+        onChange={setValue}
+
+    />
+}
