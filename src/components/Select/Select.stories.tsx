@@ -9,7 +9,7 @@ export default {
 }
 
 
-let CallBack = action('want to change')
+let CallBack = action('number')
 
 export const EmptyRating = () => <Select
     items={[
