@@ -3,4 +3,10 @@
 }
 .items {
     border: 2px solid red;
+    padding: 5px;
+    position: absolute;
+    display: none;
+}
+.active{
+    display: block;
 }
