@@ -3,7 +3,9 @@ import './App.css';
 import {AppProps, Father} from "./components/Star/Star";
 import {OnnOff} from "./components/Onn/Off";
 import {Accardion} from './components/Accardion/Accardion';
-import { Clicker } from './components/Clicker/Clicker';
+import {Clicker} from './components/Clicker/Clicker';
+import {Counter} from "./components/Clicker/Counter";
+
 
 
 function App() {
@@ -17,17 +19,14 @@ function App() {
     return (
         <div className="App">
             <OnnOff on={onn} setOnn={setOnn}/>
-
-
-            <Accardion collapsed={call} titleValue={'Hello'}
-                       onClick={ () => {setCall(!call) } }
-            />
-
-
-            <Clicker/>
-
-
-            <Father value={value} setValue={setValue}/>
+                <Accardion collapsed={call} titleValue={'Hello'}
+                           onClick={() => {
+                               setCall(!call)
+                           }}
+                />
+                <Clicker/>
+                <Father value={value} setValue={setValue}/>
+            <Counter/>
         </div>
     );
 }
