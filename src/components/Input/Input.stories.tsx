@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useRef, useState} from 'react';
+import React, {ChangeEvent, useReducer, useRef, useState} from 'react';
 import {action} from "@storybook/addon-actions";
 
 export default {
@@ -55,8 +55,8 @@ export const ControllCheckbox = () => {
 
     const [change, setChange] = useState(true)
 
+
     const onChecked = (e: ChangeEvent<HTMLInputElement>) => {
-        // debugger
         setChange(e.currentTarget.checked)
     }
 

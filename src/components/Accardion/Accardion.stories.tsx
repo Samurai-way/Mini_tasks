@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
-import {Accardion, AccardionPropsType} from './Accardion';
+import React, {useReducer, useState} from 'react';
+import {Accardion, AccardionPropsType, ReducerPropsType} from './Accardion';
 import {action} from "@storybook/addon-actions";
 import {Story} from "@storybook/react";
+
 
 export default {
     title: 'AccardionStories/Accardion',
     component: Accardion,
 }
+
+
 
 let CallBack = action('want to change')
 
@@ -37,10 +40,19 @@ AccardionTrue.args = {
 
 export const ModeChanging: Story<AccardionPropsType> = (args) => {
 
-    let [call, setCall] = useState<boolean>(true)
+    // let [call, setCall] = useState<boolean>(true)
+
+    const reducer = (state: boolean, action: ReducerPropsType) => {
+        if(action.type === 'CALL'){
+            return !state
+        }
+        return state
+    }
+
+    const [call, dispatch]=useReducer(reducer, true)
 
     return <Accardion
-        {...args} collapsed={call} onClick={() => setCall(!call)}
+        {...args} collapsed={call} onClick={() => dispatch({type: 'CALL'})}
     />
 }
 
