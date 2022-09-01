@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import  React, {useReducer, useState} from 'react';
 import style from './Style.module.css';
 
 
@@ -13,13 +13,29 @@ export type SelectPropsType = {
     items: ItemsType[]
 }
 
+export type ReducePropsType = {
+    type: 'TOGGLE'
+}
 
 export const Select = (props: SelectPropsType) => {
 
     const selectedItem = props.items.find(i => i.value === props.value)
-    const [active, setActive] = useState(true)
+
+    // const [active, setActive] = useState(true)
+
+    const reducer = (state: boolean, action: ReducePropsType) => {
+        switch (action.type){
+            case 'TOGGLE':
+                return !state
+            default: throw new Error('Bad action')
+        }
+        return state
+    }
+
+    let [active, dispatch]=useReducer(reducer, true)
+
     const clickHendler = () => {
-        setActive(!active)
+        dispatch({type: 'TOGGLE'})
     }
 
     const onItemsClick = (value: any) => {
