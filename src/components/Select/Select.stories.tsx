@@ -11,6 +11,7 @@ export default {
 let CallBack = action('number')
 
 export const EmptyRating = () => {
+
     const [value, setValue] = useState('2')
 
     return <Select

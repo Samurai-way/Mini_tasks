@@ -31,6 +31,7 @@ export const reducer = (state: boolean, action: ReducePropsType) => {
 
 export const Select = (props: SelectPropsType) => {
 
+
     const selectedItem = props.items.find(i => i.value === props.value)
 
     // const [active, setActive] = useState(true)
