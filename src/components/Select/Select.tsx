@@ -16,6 +16,18 @@ export type SelectPropsType = {
 export type ReducePropsType = {
     type: 'TOGGLE'
 }
+export type ReducePropsTest = {
+    collapsed: boolean
+}
+
+export const reducer = (state: boolean, action: ReducePropsType) => {
+    switch (action.type){
+        case 'TOGGLE':
+            return !state
+        default: throw new Error('Bad action')
+    }
+    return state
+}
 
 export const Select = (props: SelectPropsType) => {
 
@@ -23,14 +35,7 @@ export const Select = (props: SelectPropsType) => {
 
     // const [active, setActive] = useState(true)
 
-    const reducer = (state: boolean, action: ReducePropsType) => {
-        switch (action.type){
-            case 'TOGGLE':
-                return !state
-            default: throw new Error('Bad action')
-        }
-        return state
-    }
+
 
     let [active, dispatch]=useReducer(reducer, true)
 
