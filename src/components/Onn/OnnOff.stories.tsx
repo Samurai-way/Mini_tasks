@@ -26,6 +26,8 @@ export const OffOnn = () => {
 
     let [on, dispatch]=useReducer(reducer, false)
 
+    const Onn = React.memo(OnnOff)
+
 
     return <OnnOff on={on} setOnn={()=>{dispatch({type: 'TOGGLE'})}}/>
 }

@@ -22,6 +22,7 @@ function reducer(state:ReducerStateProps, action: ReducerActionType) {
 }
 
 export const Counter = () => {
+    // React.memo(CounterExample);
     const [state, dispatch] = useReducer(reducer, initialState);
     return (
         <>

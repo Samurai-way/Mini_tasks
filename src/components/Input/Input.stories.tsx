@@ -67,6 +67,8 @@ export const ControllCheckbox = () => {
 
 export const SelectOptions = () => {
 
+    // const SelectOptions = React.memo(Select)
+
     const [select, setSelect]=useState<string | undefined>('2')
 
     const onChangeElement =(e: ChangeEvent<HTMLSelectElement>)=>{
