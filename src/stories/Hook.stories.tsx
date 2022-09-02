@@ -1,33 +1,37 @@
-import React from 'react';
+import React, {useMemo, useState} from 'react';
 
 
 export default {
-    title: 'Hook',
-
+    title: 'Hook'
 }
 
-
-const Count = (props: any) => {
-    return(
+const Count = (props: { count: any }) => {
+    return (
         <div>{props.count}</div>
     )
 }
-
-const Users = (props: {users: Array<string>}) => {
-    return(
+const UsersExample = (props: { users: Array<string> }) => {
+    console.log('Hello')
+    return (
         <div>
             {
-                props.users.map((el,index) => <div>{el}</div>)
+                props.users.map((el, i) => <div>{el}</div>)
             }
         </div>
     )
 }
 
+const Users = React.memo(UsersExample)
+
 export const Example = () => {
-    return(
+
+    const [count, setCount]=useState(0)
+    const [users, setUsers]=useState(['Diam', 'Katya', 'Sveta'])
+    return (
         <div>
-            <Count count={10}/>
-            <Users users={['Artur', 'Dima', 'Sveta']}/>
+            <button onClick={()=> setCount(count+1)}>+++</button>
+            <Count count={count}/>
+            <Users users={users}/>
         </div>
     )
 }
