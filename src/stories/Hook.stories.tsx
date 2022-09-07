@@ -24,14 +24,25 @@ const UsersExample = (props: { users: Array<string> }) => {
 const Users = React.memo(UsersExample)
 
 export const Example = () => {
-
+    console.log('klick')
     const [count, setCount]=useState(0)
     const [users, setUsers]=useState(['Diam', 'Katya', 'Sveta'])
+
+    const addUser = () => {
+        const newUser = [...users, 'Dimaaa' + new Date().getTime()]
+        setUsers(newUser)
+    }
+
+    const filt = useMemo(()=>{
+        return users.filter(el => el.toLowerCase().indexOf('a')> -1)
+    },[users])
+
     return (
         <div>
             <button onClick={()=> setCount(count+1)}>+++</button>
+            <button onClick={addUser}>addUser</button>
             <Count count={count}/>
-            <Users users={users}/>
+            <Users users={filt}/>
         </div>
     )
 }
