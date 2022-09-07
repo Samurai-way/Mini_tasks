@@ -9,13 +9,9 @@ export default {
 
 let OnClick = action('want to ONN or OFF')
 
-export const Onn = () => <OnnOff on={true} setOnn={OnClick}/>
+export const OffOnnExample = () => {
 
-export const Off = () => <OnnOff on={false} setOnn={OnClick}/>
-
-export const OffOnn = () => {
-
-    // let [on, setON]=useState<boolean>(false)
+    const OffOnnExample = React.memo(OnnOff)
 
     const reducer = (state: boolean, action: ReducerPropsType) => {
         if(action.type === 'TOGGLE'){
@@ -23,12 +19,8 @@ export const OffOnn = () => {
         }
         return state
     }
-
     let [on, dispatch]=useReducer(reducer, false)
-
-    const Onn = React.memo(OnnOff)
-
-
     return <OnnOff on={on} setOnn={()=>{dispatch({type: 'TOGGLE'})}}/>
 }
-
+export const Onn = () => <OnnOff on={true} setOnn={OnClick}/>
+export const Off = () => <OnnOff on={false} setOnn={OnClick}/>
