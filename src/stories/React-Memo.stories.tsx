@@ -16,7 +16,7 @@ export const Example = () => {
     resultA = useMemo(()=>{
         for (let i = 1; i <=a ; i++) {
             let fake = 0;
-            while( fake < 100000000) {
+            while( fake < 10) {
                 fake++;
                 const faceResult = Math.random()
             }
