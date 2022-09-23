@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {clearTimeout} from "timers";
+
 
 export default {
     title: 'useEffect/clock'
 }
 
 export const Clock = () => {
-
+    console.log('clock')
     const [count, setCount] = useState(0)
     const [value, setValue]=useState<Date>(new Date)
 
@@ -14,10 +14,11 @@ export const Clock = () => {
 
 
     useEffect(() => {
+        console.log('effect')
         setInterval(() => {
             setValue(new Date)
         }, 1000)
-    }, [value])
+    }, [])
 
 
     return <>
